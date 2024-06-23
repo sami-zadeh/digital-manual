@@ -1,4 +1,4 @@
-import 'package:digital_manual/core/adaptive/font_size.dart';
+import 'package:digital_manual/core/adaptive/text_style.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/colors.dart';
@@ -27,10 +27,9 @@ abstract class AppButtons extends StatelessWidget {
       ),
       label: Text(
         label,
-        style: TextStyle(
-          color: labelColor,
-          fontSize: FontSize(context).regularText,
-        ),
+        style: AppTextStyle(context)
+            .appLableStyle
+            ?.apply(color: labelColor, fontSizeFactor: 1.3),
       ),
       icon: icon,
     );

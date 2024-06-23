@@ -1,9 +1,9 @@
 import 'package:digital_manual/core/common/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 
-class LoginButton extends StatelessWidget {
+class WideButton extends StatelessWidget {
   final AppButtons appButton;
-  const LoginButton({super.key, required this.appButton});
+  const WideButton({super.key, required this.appButton});
 
   @override
   Widget build(BuildContext context) {

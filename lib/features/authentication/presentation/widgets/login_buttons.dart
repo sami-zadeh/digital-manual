@@ -1,7 +1,9 @@
+import 'package:digital_manual/config/routes/route_config.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '/core/common/widgets/buttons.dart';
-import 'login_button.dart';
+import 'wide_button.dart';
 
 class LoginButtons extends StatelessWidget {
   const LoginButtons({super.key});
@@ -15,16 +17,16 @@ class LoginButtons extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              LoginButton(
+              WideButton(
                 appButton: SecondaryButton(onPress: () {}, label: 'Login'),
               ),
               spacer(30),
-              LoginButton(
+              WideButton(
                 appButton:
                     PrimaryButton(onPress: () {}, label: 'Create My Account'),
               ),
               spacer(30),
-              underlineTextButton(),
+              underlineTextButton(context),
             ],
           ),
         ),
@@ -33,11 +35,11 @@ class LoginButtons extends StatelessWidget {
   }
 }
 
-Widget underlineTextButton() {
+Widget underlineTextButton(BuildContext context) {
   return Container(
     margin: const EdgeInsets.only(bottom: 30),
     child: InkWell(
-      onTap: () {},
+      onTap: () => context.push(RouteNames.whySignUp),
       child: Container(
         decoration: const BoxDecoration(
           border: Border(
