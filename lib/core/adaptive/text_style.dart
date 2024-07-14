@@ -29,4 +29,7 @@ class AppTextStyle {
 
   TextStyle? get appBodyStyle => generateAdaptiveStyle(
       textTheme.bodySmall, textTheme.bodyMedium, textTheme.bodyLarge);
+
+  TextStyle? get appDisplayStyle => generateAdaptiveStyle(
+      textTheme.displaySmall, textTheme.displayMedium, textTheme.displayLarge);
 }

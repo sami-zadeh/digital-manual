@@ -5,9 +5,15 @@ import '/core/user/data/models/user_model.dart';
 import 'utils/auth_api_utils.dart';
 
 abstract interface class AuthApi {
-  Future<UserModel?> loginWithPhoneNumber({
+  Future<void> sendPhoneNumber({
     required String phoneNumber,
-    int? otpCode,
+    required Function(String verificationId) getVid,
+    required Function(int? resendToken) resendToken,
+    int? forceResendToken,
+  });
+  Future<UserModel> loginWithOTP({
+    required String otpCode,
+    required String vid,
   });
 }
 
@@ -15,15 +21,40 @@ class AuthApiImpl implements AuthApi {
   final firebaseAuth = FirebaseAuth.instance;
 
   @override
-  Future<UserModel?> loginWithPhoneNumber({
+  Future<void> sendPhoneNumber({
     required String phoneNumber,
-    int? otpCode,
+    required Function(String verificationId) getVid,
+    required Function(int? resendToken) resendToken,
+    int? forceResendToken,
   }) async {
     try {
-      return await verifyPhoneNumberHandler(
-          firebaseAuth: firebaseAuth,
-          phoneNumber: int.parse(phoneNumber),
-          otpCode: otpCode);
+      await verifyPhoneNumber(
+        firebaseAuth: firebaseAuth,
+        phoneNumber: phoneNumber,
+        getVid: getVid,
+        resendToken: resendToken,
+        forceResendToken: forceResendToken,
+      );
+    } on FirebaseAuthException catch (error) {
+      throw ServerException(error.message!);
+    } catch (error) {
+      throw ServerException(error.toString());
+    }
+  }
+
+  @override
+  Future<UserModel> loginWithOTP({
+    required String otpCode,
+    required String vid,
+  }) async {
+    try {
+      PhoneAuthCredential credential =
+          PhoneAuthProvider.credential(verificationId: vid, smsCode: otpCode);
+      var userData = await firebaseAuth.signInWithCredential(credential);
+      return UserModel(
+        id: userData.user!.uid,
+        phoneNumber: int.parse(userData.user!.phoneNumber!),
+      );
     } on FirebaseAuthException catch (error) {
       throw ServerException(error.message!);
     } catch (error) {

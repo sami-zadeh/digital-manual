@@ -9,4 +9,7 @@ class AuthenticationConstText {
     'Receive important product notifications such as care and maintenance, product recalls, etc.',
     'Many other exciting features will be added in the future.',
   ];
+  static const phoneNumberTitle = 'ENTER YOUR PHONE NUMBER';
+  static const phoneNumberSubTitle =
+      'Your phone number is only used for you to log in without having to remember a password.\nWe will NOT share it with the sellers or any other third parties.';
 }

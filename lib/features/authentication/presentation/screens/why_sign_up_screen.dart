@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-import '/core/constants/authentication_const_text.dart';
-import '../widgets/bullet_text.dart';
-import '../widgets/wide_button.dart';
 import '/core/adaptive/text_style.dart';
 import '/core/common/widgets/buttons.dart';
+import '/core/constants/authentication_const_text.dart';
 import '/core/constants/colors.dart';
+import '/config/routes/route_config.dart';
+import '../widgets/bullet_text.dart';
+import '../widgets/wide_button.dart';
 
 class WhySignUpScreen extends StatelessWidget {
   const WhySignUpScreen({super.key});
@@ -44,6 +46,7 @@ Widget whySignUpContent(BuildContext context) => Column(
       children: [
         spacer(),
         whySignUpText(context),
+        whySignUpButton(context),
       ],
     );
 
@@ -53,7 +56,7 @@ Widget spacer() => Flexible(
     );
 
 Widget whySignUpText(BuildContext context) => Flexible(
-      flex: 6,
+      flex: 5,
       child: Container(
         width: double.infinity,
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -84,9 +87,11 @@ Widget whySignUpText(BuildContext context) => Flexible(
       ),
     );
 
-Widget whySignUpButton() => Flexible(
+Widget whySignUpButton(BuildContext context) => Flexible(
       flex: 2,
       child: WideButton(
-        appButton: PrimaryButton(onPress: () {}, label: 'Craete My Account'),
+        appButton: PrimaryButton(
+            onPress: () => context.push(RouteNames.phoneNumberScreen),
+            label: 'Craete My Account'),
       ),
     );

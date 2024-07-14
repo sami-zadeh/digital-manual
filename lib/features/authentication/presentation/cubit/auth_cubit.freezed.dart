@@ -16,55 +16,13 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AuthState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(UserEntity? userModel) success,
-    required TResult Function(String message) failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(UserEntity? userModel)? success,
-    TResult? Function(String message)? failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(UserEntity? userModel)? success,
-    TResult Function(String message)? failure,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Failure value) failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Failure value)? failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Failure value)? failure,
-    required TResult orElse(),
-  }) =>
+  dynamic get authStatus => throw _privateConstructorUsedError;
+  String? get phoneNumber => throw _privateConstructorUsedError;
+  String? get errorMessage => throw _privateConstructorUsedError;
+  UserEntity? get userEntity => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $AuthStateCopyWith<AuthState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -72,6 +30,12 @@ mixin _$AuthState {
 abstract class $AuthStateCopyWith<$Res> {
   factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) =
       _$AuthStateCopyWithImpl<$Res, AuthState>;
+  @useResult
+  $Res call(
+      {dynamic authStatus,
+      String? phoneNumber,
+      String? errorMessage,
+      UserEntity? userEntity});
 }
 
 /// @nodoc
@@ -83,262 +47,80 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? authStatus = freezed,
+    Object? phoneNumber = freezed,
+    Object? errorMessage = freezed,
+    Object? userEntity = freezed,
+  }) {
+    return _then(_value.copyWith(
+      authStatus: freezed == authStatus
+          ? _value.authStatus
+          : authStatus // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      phoneNumber: freezed == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      errorMessage: freezed == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userEntity: freezed == userEntity
+          ? _value.userEntity
+          : userEntity // ignore: cast_nullable_to_non_nullable
+              as UserEntity?,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
-
+abstract class _$$AuthStateImplCopyWith<$Res>
+    implements $AuthStateCopyWith<$Res> {
+  factory _$$AuthStateImplCopyWith(
+          _$AuthStateImpl value, $Res Function(_$AuthStateImpl) then) =
+      __$$AuthStateImplCopyWithImpl<$Res>;
   @override
-  String toString() {
-    return 'AuthState.initial()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(UserEntity? userModel) success,
-    required TResult Function(String message) failure,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(UserEntity? userModel)? success,
-    TResult? Function(String message)? failure,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(UserEntity? userModel)? success,
-    TResult Function(String message)? failure,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Failure value) failure,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Failure value)? failure,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Failure value)? failure,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements AuthState {
-  const factory _Initial() = _$InitialImpl;
-}
-
-/// @nodoc
-abstract class _$$LoadingImplCopyWith<$Res> {
-  factory _$$LoadingImplCopyWith(
-          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
-      __$$LoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$LoadingImpl>
-    implements _$$LoadingImplCopyWith<$Res> {
-  __$$LoadingImplCopyWithImpl(
-      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$LoadingImpl implements _Loading {
-  const _$LoadingImpl();
-
-  @override
-  String toString() {
-    return 'AuthState.loading()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(UserEntity? userModel) success,
-    required TResult Function(String message) failure,
-  }) {
-    return loading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(UserEntity? userModel)? success,
-    TResult? Function(String message)? failure,
-  }) {
-    return loading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(UserEntity? userModel)? success,
-    TResult Function(String message)? failure,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Failure value) failure,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Failure value)? failure,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Failure value)? failure,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Loading implements AuthState {
-  const factory _Loading() = _$LoadingImpl;
-}
-
-/// @nodoc
-abstract class _$$SuccessImplCopyWith<$Res> {
-  factory _$$SuccessImplCopyWith(
-          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
-      __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({UserEntity? userModel});
+  $Res call(
+      {dynamic authStatus,
+      String? phoneNumber,
+      String? errorMessage,
+      UserEntity? userEntity});
 }
 
 /// @nodoc
-class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$SuccessImpl>
-    implements _$$SuccessImplCopyWith<$Res> {
-  __$$SuccessImplCopyWithImpl(
-      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
+class __$$AuthStateImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$AuthStateImpl>
+    implements _$$AuthStateImplCopyWith<$Res> {
+  __$$AuthStateImplCopyWithImpl(
+      _$AuthStateImpl _value, $Res Function(_$AuthStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userModel = freezed,
+    Object? authStatus = freezed,
+    Object? phoneNumber = freezed,
+    Object? errorMessage = freezed,
+    Object? userEntity = freezed,
   }) {
-    return _then(_$SuccessImpl(
-      freezed == userModel
-          ? _value.userModel
-          : userModel // ignore: cast_nullable_to_non_nullable
+    return _then(_$AuthStateImpl(
+      authStatus: freezed == authStatus ? _value.authStatus! : authStatus,
+      phoneNumber: freezed == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+      errorMessage: freezed == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userEntity: freezed == userEntity
+          ? _value.userEntity
+          : userEntity // ignore: cast_nullable_to_non_nullable
               as UserEntity?,
     ));
   }
@@ -346,260 +128,75 @@ class __$$SuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SuccessImpl implements _Success {
-  const _$SuccessImpl(this.userModel);
+class _$AuthStateImpl implements _AuthState {
+  const _$AuthStateImpl(
+      {this.authStatus = AuthStatus.initial,
+      this.phoneNumber,
+      this.errorMessage,
+      this.userEntity});
 
   @override
-  final UserEntity? userModel;
+  @JsonKey()
+  final dynamic authStatus;
+  @override
+  final String? phoneNumber;
+  @override
+  final String? errorMessage;
+  @override
+  final UserEntity? userEntity;
 
   @override
   String toString() {
-    return 'AuthState.success(userModel: $userModel)';
+    return 'AuthState(authStatus: $authStatus, phoneNumber: $phoneNumber, errorMessage: $errorMessage, userEntity: $userEntity)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SuccessImpl &&
-            (identical(other.userModel, userModel) ||
-                other.userModel == userModel));
+            other is _$AuthStateImpl &&
+            const DeepCollectionEquality()
+                .equals(other.authStatus, authStatus) &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                other.phoneNumber == phoneNumber) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage) &&
+            (identical(other.userEntity, userEntity) ||
+                other.userEntity == userEntity));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, userModel);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(authStatus),
+      phoneNumber,
+      errorMessage,
+      userEntity);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(UserEntity? userModel) success,
-    required TResult Function(String message) failure,
-  }) {
-    return success(userModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(UserEntity? userModel)? success,
-    TResult? Function(String message)? failure,
-  }) {
-    return success?.call(userModel);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(UserEntity? userModel)? success,
-    TResult Function(String message)? failure,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(userModel);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Failure value) failure,
-  }) {
-    return success(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Failure value)? failure,
-  }) {
-    return success?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Failure value)? failure,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(this);
-    }
-    return orElse();
-  }
+  _$$AuthStateImplCopyWith<_$AuthStateImpl> get copyWith =>
+      __$$AuthStateImplCopyWithImpl<_$AuthStateImpl>(this, _$identity);
 }
 
-abstract class _Success implements AuthState {
-  const factory _Success(final UserEntity? userModel) = _$SuccessImpl;
+abstract class _AuthState implements AuthState {
+  const factory _AuthState(
+      {final dynamic authStatus,
+      final String? phoneNumber,
+      final String? errorMessage,
+      final UserEntity? userEntity}) = _$AuthStateImpl;
 
-  UserEntity? get userModel;
+  @override
+  dynamic get authStatus;
+  @override
+  String? get phoneNumber;
+  @override
+  String? get errorMessage;
+  @override
+  UserEntity? get userEntity;
+  @override
   @JsonKey(ignore: true)
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$FailureImplCopyWith<$Res> {
-  factory _$$FailureImplCopyWith(
-          _$FailureImpl value, $Res Function(_$FailureImpl) then) =
-      __$$FailureImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String message});
-}
-
-/// @nodoc
-class __$$FailureImplCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$FailureImpl>
-    implements _$$FailureImplCopyWith<$Res> {
-  __$$FailureImplCopyWithImpl(
-      _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? message = null,
-  }) {
-    return _then(_$FailureImpl(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$FailureImpl implements _Failure {
-  const _$FailureImpl(this.message);
-
-  @override
-  final String message;
-
-  @override
-  String toString() {
-    return 'AuthState.failure(message: $message)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FailureImpl &&
-            (identical(other.message, message) || other.message == message));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, message);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
-      __$$FailureImplCopyWithImpl<_$FailureImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(UserEntity? userModel) success,
-    required TResult Function(String message) failure,
-  }) {
-    return failure(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(UserEntity? userModel)? success,
-    TResult? Function(String message)? failure,
-  }) {
-    return failure?.call(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(UserEntity? userModel)? success,
-    TResult Function(String message)? failure,
-    required TResult orElse(),
-  }) {
-    if (failure != null) {
-      return failure(message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Failure value) failure,
-  }) {
-    return failure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Failure value)? failure,
-  }) {
-    return failure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Failure value)? failure,
-    required TResult orElse(),
-  }) {
-    if (failure != null) {
-      return failure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Failure implements AuthState {
-  const factory _Failure(final String message) = _$FailureImpl;
-
-  String get message;
-  @JsonKey(ignore: true)
-  _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
+  _$$AuthStateImplCopyWith<_$AuthStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

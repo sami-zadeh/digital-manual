@@ -1,9 +1,13 @@
 part of 'auth_cubit.dart';
 
+enum AuthStatus { initial, loading, success, failure, resendLoading }
+
 @freezed
 class AuthState with _$AuthState {
-  const factory AuthState.initial() = _Initial;
-  const factory AuthState.loading() = _Loading;
-  const factory AuthState.success(UserEntity? userModel) = _Success;
-  const factory AuthState.failure(String message) = _Failure;
+  const factory AuthState({
+    @Default(AuthStatus.initial) authStatus,
+    String? phoneNumber,
+    String? errorMessage,
+    UserEntity? userEntity,
+  }) = _AuthState;
 }
