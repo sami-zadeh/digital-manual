@@ -1,11 +1,11 @@
-import 'package:digital_manual/core/common/widgets/screens/splash_screen.dart';
 import 'package:go_router/go_router.dart';
 
-import '/core/home/presentation/home_screen.dart';
 import '/features/authentication/presentation/screens/login_screen.dart';
 import '/features/authentication/presentation/screens/otp_screen.dart';
 import '/features/authentication/presentation/screens/phone_number_screen.dart';
 import '/features/authentication/presentation/screens/why_sign_up_screen.dart';
+import '../../core/common/screens/navigation_screen.dart';
+import '../../core/common/screens/splash_screen.dart';
 
 final appRouter = GoRouter(
   initialLocation: '/splash',
@@ -38,7 +38,7 @@ final appRouter = GoRouter(
     GoRoute(
       name: 'home',
       path: '/home',
-      builder: (context, state) => const HomeScreen(),
+      builder: (context, state) => const NavigationScreen(),
     ),
   ],
 );

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '/core/common/widgets/buttons.dart';
 import '/config/routes/route_config.dart';
-import 'wide_button.dart';
+import '/core/common/widgets/buttons.dart';
 
 class LoginButtons extends StatelessWidget {
   const LoginButtons({super.key});
@@ -17,14 +16,14 @@ class LoginButtons extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              WideButton(
-                appButton: SecondaryButton(
+              fullWidthButton(
+                SecondaryButton(
                     onPress: () => context.push(RouteNames.phoneNumberScreen),
                     label: 'Login'),
               ),
               spacer(30),
-              WideButton(
-                appButton: PrimaryButton(
+              fullWidthButton(
+                PrimaryButton(
                     onPress: () => context.push(RouteNames.phoneNumberScreen),
                     label: 'Create My Account'),
               ),

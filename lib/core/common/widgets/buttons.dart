@@ -66,3 +66,10 @@ class AlertButton extends AppButtons {
     super.icon = const Icon(Icons.delete, color: Colors.white),
   });
 }
+
+Widget fullWidthButton(Widget button) => Container(
+      constraints: const BoxConstraints(maxWidth: 600),
+      width: double.infinity,
+      margin: const EdgeInsets.symmetric(horizontal: 20),
+      child: button,
+    );

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '/config/routes/route_config.dart';
 import '/core/adaptive/text_style.dart';
 import '/core/common/widgets/buttons.dart';
 import '/core/constants/authentication_const_text.dart';
 import '/core/constants/colors.dart';
-import '/config/routes/route_config.dart';
 import '../widgets/bullet_text.dart';
-import '../widgets/wide_button.dart';
 
 class WhySignUpScreen extends StatelessWidget {
   const WhySignUpScreen({super.key});
@@ -89,8 +88,8 @@ Widget whySignUpText(BuildContext context) => Flexible(
 
 Widget whySignUpButton(BuildContext context) => Flexible(
       flex: 2,
-      child: WideButton(
-        appButton: PrimaryButton(
+      child: fullWidthButton(
+        PrimaryButton(
             onPress: () => context.push(RouteNames.phoneNumberScreen),
             label: 'Craete My Account'),
       ),
